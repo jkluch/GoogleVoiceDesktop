@@ -1,8 +1,7 @@
-package com.joeklu.googlevoice.gui.sms;
+package com.joeklu.desktop.googlevoice.gui.sms;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;

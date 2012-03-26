@@ -1,4 +1,4 @@
-package com.joeklu.googlevoice.gui.login;
+package com.joeklu.desktop.googlevoice.gui.login;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;

@@ -1,4 +1,4 @@
-package com.joeklu.googlevoice.soundmaker;
+package com.joeklu.desktop.googlevoice.soundmaker;
 
 import java.applet.Applet;
 import java.applet.AudioClip;

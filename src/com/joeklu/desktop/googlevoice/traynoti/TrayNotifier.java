@@ -1,5 +1,5 @@
 
-package com.joeklu.googlevoice.traynoti;
+package com.joeklu.desktop.googlevoice.traynoti;
 
 import java.awt.*;
 import java.awt.event.*;

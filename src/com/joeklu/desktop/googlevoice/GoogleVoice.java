@@ -1,13 +1,13 @@
-package com.joeklu.googlevoice;
+package com.joeklu.desktop.googlevoice;
 
 import java.io.IOException;
 
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
-import com.joeklu.googlevoice.gui.login.GoogleVoiceLoginGui;
-import com.joeklu.googlevoice.parser.VoiceParser;
-import com.joeklu.googlevoice.soundmaker.NotifySound;
-import com.joeklu.googlevoice.traynoti.TrayNotifier;
+import com.joeklu.desktop.googlevoice.gui.login.GoogleVoiceLoginGui;
+import com.joeklu.desktop.googlevoice.parser.VoiceParser;
+import com.joeklu.desktop.googlevoice.soundmaker.NotifySound;
+import com.joeklu.desktop.googlevoice.traynoti.TrayNotifier;
 import com.techventus.server.voice.Voice;
 
 public class GoogleVoice{
