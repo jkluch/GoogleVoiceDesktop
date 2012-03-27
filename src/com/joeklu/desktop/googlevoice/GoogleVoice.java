@@ -1,7 +1,6 @@
 package com.joeklu.desktop.googlevoice;
 
 import java.io.IOException;
-
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import com.joeklu.desktop.googlevoice.gui.login.GoogleVoiceLoginGui;
@@ -34,7 +33,7 @@ public class GoogleVoice{
 		*/
 		//credentials[0]="joe.kluchinski@gmail.com";
 		//credentials[1]="btvelctufpswnowh";
-		credentials=parse.loginCredentials();
+		//credentials=parse.loginCredentials();
 		voice = new Voice(credentials[0], credentials[1]);
 		
 		tray.makeGUI();

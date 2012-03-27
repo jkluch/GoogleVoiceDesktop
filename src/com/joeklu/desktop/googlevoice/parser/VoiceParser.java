@@ -28,7 +28,7 @@ public class VoiceParser {
 	public VoiceParser(){
 		
 	}
-	public String[] loginCredentials(){
+	public String[] loginCredentials() throws IOException{
 		String[] credentials = new String[2];
 		try{
 			//String userdir = System.getProperty("user.dir");
@@ -38,7 +38,12 @@ public class VoiceParser {
 			pass = testProps.getProperty("password");
 		}
 		catch (Exception e){
-			JOptionPane.showMessageDialog(null, "Could not find properties file");
+			JOptionPane.showMessageDialog(null, "Could not find properties file or username/password fields\nCreating a new properties file.");
+			FileOutputStream stream = new FileOutputStream("GoogleVoice.properties");
+			OutputStreamWriter out = new OutputStreamWriter(stream, "UTF-8");
+			String propertyFill="# 1. This filename must stay GoogleVoice.properties\n# 2. Enter your username and password into fields\n# 3. For your password I suggest using an application specific password (2-step verification people must use this)\n# 4. I'm working on another password method, this will have to do for now.\nusername=username\npassword=password";
+			out.write(propertyFill);
+			out.close();
 		}
 		credentials[0]=userName;
 		credentials[1]=pass;
@@ -64,14 +69,7 @@ public class VoiceParser {
 	}
 	
 	private static Properties load(String propsFile) throws IOException{
-		/*
-		FileOutputStream stream = new FileOutputStream("WEEE.txt");
-		OutputStreamWriter out = new OutputStreamWriter(stream, "US-ASCII");;
-		out.write("1221");
-		out.close();
-		*/
 		Properties result = null;
-		
 		// Returns null on lookup failures:
 		
 		
