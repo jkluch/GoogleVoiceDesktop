@@ -26,6 +26,8 @@ public class GoogleVoiceLoginGui extends JFrame {
 	private JPanel contentPane;
 	private JTextField UserField;
 	private JTextField PassField;
+	public int freezer;
+	GoogleVoiceLoginGui frame = new GoogleVoiceLoginGui();
 
 	/**
 	 * Create the frame.
@@ -86,17 +88,23 @@ public class GoogleVoiceLoginGui extends JFrame {
 	}
 	
 	public void launchLogin(){
-		GoogleVoiceLoginGui frame = new GoogleVoiceLoginGui();
 		frame.setVisible(true);
+		freezer=0;
 	}
 	private void setCredentials(String[] fields){
 		userName=fields[0];
 		pass=fields[1];
+		freezer=1;
+		closeWindow();
 	}
 	public String[] getCredentials(){
 		String[] fields=new String[2];
 		fields[0]=userName;
 		fields[1]=pass;
 		return fields;
+	}
+	
+	private void closeWindow(){
+		frame.setVisible(false);
 	}
 }
