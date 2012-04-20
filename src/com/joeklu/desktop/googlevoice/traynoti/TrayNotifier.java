@@ -3,11 +3,18 @@ package com.joeklu.desktop.googlevoice.traynoti;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 import java.net.URL;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
+import com.joeklu.desktop.googlevoice.soundmaker.NotifySound;
+
 
 public class TrayNotifier{
 		/* Use an appropriate Look and Feel */
+	NotifySound sounds = new NotifySound();
 	MenuItem countItem;
 	
 	public TrayNotifier(){
@@ -49,6 +56,7 @@ public class TrayNotifier{
 		
 		// Create a popup menu components
 		MenuItem aboutItem = new MenuItem("About");
+		MenuItem soundItem = new MenuItem("Sound Test");
 		countItem = new MenuItem("New SMS count: 0");
 		Menu displayMenu = new Menu("Display");
 		MenuItem errorItem = new MenuItem("Error");
@@ -60,6 +68,7 @@ public class TrayNotifier{
 		//Add components to popup menu
 		popup.add(aboutItem);
 		popup.add(countItem);
+		popup.add(soundItem);
 		popup.addSeparator();
 		popup.add(displayMenu);
 		displayMenu.add(errorItem);
@@ -91,6 +100,23 @@ public class TrayNotifier{
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null,
 						"Made by Joe Kluchinski\nMarch 2012");
+			}
+		});
+		
+		soundItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					sounds.createSound("sounds/sound.wav");
+				} catch (UnsupportedAudioFileException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (LineUnavailableException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		

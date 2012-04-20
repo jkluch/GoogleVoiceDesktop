@@ -24,16 +24,16 @@ public class GoogleVoice{
 		String smsCount=null;
 		
 		
-		//credentials=parse.loginCredentials();
+		credentials=parse.loginCredentials();
 		
-			GoogleVoiceLoginGui frame = new GoogleVoiceLoginGui();
-			frame.launchLogin();
-			while(frame.freezer==0){
+		//	GoogleVoiceLoginGui frame = new GoogleVoiceLoginGui();
+		//	frame.launchLogin();
+		//	while(frame.freezer==0){
 				//Don't do the next part till login is pushed
 				//Sleep for 10 seconds to save on cpu
-				Thread.sleep(10000);
-			}
-			credentials=frame.getCredentials();
+		//		Thread.sleep(10000);
+		//	}
+		//	credentials=frame.getCredentials();
 		
 			
 		voice = new Voice(credentials[0], credentials[1]);
